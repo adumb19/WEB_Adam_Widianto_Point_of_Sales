@@ -12,7 +12,7 @@ class LevelController extends Controller
      */
     public function index()
     {
-        $data = Level::orderBy('id', 'desc')->get();
+        $data = Level::get();
 
         return view('level.index', compact('data'));
     }

@@ -23,9 +23,7 @@
 
                     <div class="table-responsive">
                         <div align='right' class="mb-3">
-                          <a href="
-                          {{ route('user.create') }}
-                           " class="btn btn-primary">Tambah Data</a>
+                          <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah Data</a>
                         </div>
                           <table class="table table-bordered" id="datatables">
                               <thead>
@@ -45,12 +43,8 @@
                                       <td>{{ $item->level->nama_level }}</td>
                                       <td>{{ $item->email }}</td>
                                       <td>
-                                        <a href="
-                                        {{ route('user.edit', $item->id) }}
-                                         " class="btn btn-ss btn-success">Edit</a>
-                                        <form action="
-                                        {{ route('user.destroy', $item->id) }}
-                                         " method="POST" class="d-inline">
+                                        <a href="{{ route('user.edit', $item->id) }}" class="btn btn-ss btn-success">Edit</a>
+                                        <form action="{{ route('user.destroy', $item->id) }}" method="POST" class="d-inline">
                                           @csrf
                                           <input type="hidden" name="_method" value="DELETE">
                                           <button type="submit" class="btn btn-ss btn-danger show_confirm">Hapus</button>

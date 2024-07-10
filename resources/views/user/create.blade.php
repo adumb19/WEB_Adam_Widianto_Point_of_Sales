@@ -21,9 +21,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Tambah Pengguna</h1>
 
-                    <form action="
-                    {{ route('user.store') }}
-                     " method="POST">
+                    <form action="{{ route('user.store') }}" method="POST">
                         @csrf
                         <div class="form-group mb-3">
                             <label for="">Nama</label>
@@ -49,9 +47,7 @@
                         <div class="form-group mb-3">
                             <input type="submit" class="btn btn-primary" value="Simpan">
                             <input type="reset" class="btn btn-danger" value="Reset">
-                            <a href="
-                            {{ url()->previous() }}
-                             " class=" btn btn-info">Kembali</a>
+                            <a href="{{ url()->previous() }}" class=" btn btn-info">Kembali</a>
                         </div>
                     </form>
 

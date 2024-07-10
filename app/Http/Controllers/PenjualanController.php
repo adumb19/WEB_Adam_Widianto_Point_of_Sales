@@ -13,7 +13,7 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        $data = Penjualan::with('user')->orderBy('id', 'desc')->get();
+        $data = Penjualan::with('user')->get();
 
         return view('penjualan.index', compact('data'));
     }

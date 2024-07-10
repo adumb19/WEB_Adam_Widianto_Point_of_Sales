@@ -21,9 +21,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Tambah Barang</h1>
 
-                    <form action="
-                    {{ route('barang.store') }}
-                     " method="POST">
+                    <form action="{{ route('barang.store') }}" method="POST">
                         @csrf
                         <div class="form-group mb-3">
                             <label for="">Nama Barang</label>
@@ -31,7 +29,7 @@
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Kategori</label>
-                          <select name="id_kategori" class="form-control">
+                          <select name="id_barang" class="form-control">
                             <option value="" disabled selected>Pilih Kategori</option>
                             @foreach ($data as $key => $item)
                             <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
@@ -53,9 +51,7 @@
                         <div class="form-group mb-3">
                             <input type="submit" class="btn btn-primary" value="Simpan">
                             <input type="reset" class="btn btn-danger" value="Reset">
-                            <a href="
-                            {{ url()->previous() }}
-                             " class=" btn btn-info">Kembali</a>
+                            <a href="{{ url()->previous() }}" class=" btn btn-info">Kembali</a>
                         </div>
                     </form>
 

@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::with('level')->orderBy('id', 'desc')->get();
+        $data = User::with('level')->get();
 
         return view('user.index', compact('data'));
     }
@@ -71,6 +71,12 @@ class UserController extends Controller
     {
         //data yang tidak ingin diedit boleh dibiarkan
         $data = [];
+        if ($request->filled('nama_lengkap')) {
+            $data['nama_lengkap'] = $request->nama_lengkap;
+        }
+        if ($request->filled('email')) {
+            $data['email'] = $request->email;
+        }
         if ($request->filled('password')) {
             $data['password'] = $request->password;
         }

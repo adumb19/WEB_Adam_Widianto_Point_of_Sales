@@ -12,7 +12,7 @@ class Kategori_barangController extends Controller
      */
     public function index()
     {
-        $data = Kategori_barang::orderBy('id', 'desc')->get();
+        $data = Kategori_barang::get();
 
         return view('kategori.index', compact('data'));
     }

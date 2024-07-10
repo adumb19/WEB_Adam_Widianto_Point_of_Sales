@@ -13,7 +13,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $data = Barang::with('kategori')->orderBy('id', 'desc')->get();
+        $data = Barang::with('kategori')->get();
 
         return view('barang.index', compact('data'));
     }
@@ -34,7 +34,7 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         Barang::create([
-            'id_kategori' => $request->id_kategori,
+            'id_barang' => $request->id_barang,
             'nama_barang' => $request->nama_barang,
             'satuan' => $request->satuan,
             'qty' => $request->qty,
@@ -71,8 +71,20 @@ class BarangController extends Controller
     {
         //data yang tidak ingin diedit boleh dibiarkan
         $data = [];
+        if ($request->filled('id_barang')) {
+            $data['id_barang'] = $request->id_barang;
+        }
         if ($request->filled('nama_barang')) {
             $data['nama_barang'] = $request->nama_barang;
+        }
+        if ($request->filled('satuan')) {
+            $data['satuan'] = $request->satuan;
+        }
+        if ($request->filled('qty')) {
+            $data['qty'] = $request->qty;
+        }
+        if ($request->filled('harga')) {
+            $data['harga'] = $request->harga;
         }
 
         Barang::where('id', $id)->update($data);

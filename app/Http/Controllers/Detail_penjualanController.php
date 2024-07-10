@@ -15,7 +15,7 @@ class Detail_penjualanController extends Controller
      */
     public function index()
     {
-        $data = Detail_penjualan::with(['penjualan', 'barang'])->orderBy('id', 'desc')->get();
+        $data = Detail_penjualan::with(['penjualan', 'barang'])->get();
 
         return view('detail_penjualan.index', compact('data'));
     }
