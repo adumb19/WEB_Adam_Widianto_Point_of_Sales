@@ -19,29 +19,64 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Tambah Data Penjualan</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Tambah Penjualan</h1>
 
                     <form action="
                     {{ route('penjualan.store') }}
                      " method="POST">
                         @csrf
-                        <div class="form-group mb-3">
-                            <label for="">Nama User</label>
-                            <select name="id_user" id="" class="form-control">
-                                <option value="" disabled selected>Pilih User</option>
-                                @foreach ($data as $key => $item)
-                                    <option value="{{ $item->id }}">{{ $item->nama_lengkap }}</option>
-                                @endforeach
-                            </select>
+                        <div class="row mb-3">
+                            <div class="col-4 mb-3">
+                                <label for="">Nama User</label>
+                                <select name="id_user" id="" class="form-control">
+                                    <option value="" disabled selected>Pilih User</option>
+                                    @foreach ($data as $key => $item)
+                                        <option value="{{ $item->id }}">{{ $item->nama_lengkap }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <label for="">Kode Transaksi</label>
+                                <input name="kode_transaksi" type="text" class="form-control" placeholder="Masukan Kode Transaksi">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <label for="">Tanggal Transaksi</label>
+                                <input name="tanggal_transaksi" type="date" class="form-control" placeholder="Masukan Tanggal Transaksi">
+                            </div>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="">Kode Transaksi</label>
-                            <input name="kode_transaksi" type="text" class="form-control" placeholder="Masukan Kode Transaksi">
+                        
+                        <div class="table-transaction">
+                            <div align="right" class="mb-3">
+                                <button type="button" class="btn btn-sm btn-primary mx-3" id="btn-add">Tambah Barang</button>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">No</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="">Tanggal Transaksi</label>
-                            <input name="tanggal_transaksi" type="date" class="form-control" placeholder="Masukan Tanggal Transaksi">
-                        </div>
+                        
                         <div class="form-group mb-3">
                             <input type="submit" class="btn btn-primary" value="Simpan">
                             <input type="reset" class="btn btn-danger" value="Reset">
