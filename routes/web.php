@@ -10,7 +10,7 @@ use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-
+//halaman pertama langsung mengarah ke login page
 Route::get('/', [LoginController::class, 'index'])->name('index');
 Route::get('login', [LoginController::class, 'index']);
 Route::post('actionLogin', [LoginController::class, 'actionLogin'])->name('actionLogin');

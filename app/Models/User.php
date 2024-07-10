@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
     ];
 
+    //relasi dengan model level
     public function level() {
         return $this->belongsTo(Level::class,'id_level','id');
     }

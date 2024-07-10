@@ -20,6 +20,7 @@ class Detail_penjualan extends Model
         'kembalian',
     ];
 
+    //relasi dengan model penjualan
     public function penjualan() {
         return $this->belongsTo(Penjualan::class, 'id_penjualan', 'id');
     }

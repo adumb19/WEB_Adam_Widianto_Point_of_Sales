@@ -15,6 +15,7 @@ class Penjualan extends Model
         'tanggal_transaksi',
     ];
 
+    //relasi dengan model user
     public function user() {
         return $this->belongsTo(User::class, 'id_user', 'id');
     }

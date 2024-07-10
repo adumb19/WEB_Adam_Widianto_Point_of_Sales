@@ -69,7 +69,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //data yang tidak ingin diedit boleh dibiarkan
+        //data yang tidak ingin diedit boleh dibiarkan *terutama untuk password*
         $data = [];
         if ($request->filled('nama_lengkap')) {
             $data['nama_lengkap'] = $request->nama_lengkap;

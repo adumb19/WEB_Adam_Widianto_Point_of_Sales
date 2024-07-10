@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\Penjualan;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,8 +25,15 @@ class PenjualanController extends Controller
     public function create()
     {
         $data = User::all();
+        $barang = Barang::all();
 
-        return view('penjualan.create', compact('data'));
+        //membuat kode transaksi auto generate
+        $kode_transaksi = Penjualan::first();
+        $huruf = "TR";
+        $urutan = $kode_transaksi->id;
+        $kode_transaksi = $huruf . date('dmY') . sprintf("%03s", $urutan);
+
+        return view('penjualan.create', compact('data', 'kode_transaksi', 'barang'));
     }
 
     /**

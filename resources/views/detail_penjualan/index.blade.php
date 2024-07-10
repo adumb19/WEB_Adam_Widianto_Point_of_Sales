@@ -23,7 +23,9 @@
 
                     <div class="table-responsive">
                         <div align='right' class="mb-3">
-                          <a href="{{ route('detail_penjualan.create') }}" class="btn btn-primary">Tambah Data</a>
+                          <a href="
+                          {{-- {{ route('detail_penjualan.create') }} --}}
+                           " class="btn btn-primary">Tambah Data</a>
                         </div>
                           <table class="table table-bordered" id="datatables">
                               <thead>
