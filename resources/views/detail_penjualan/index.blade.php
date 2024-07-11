@@ -46,7 +46,7 @@
                                 @foreach ($data as $key => $item)
                                   <tr>
                                       <td>{{ $loop->iteration }}</td>
-                                      <td>{{ $item->penjualan->kode_transaksi }}</td>
+                                      <td>{{ $item->penjualan?->kode_transaksi }}</td>
                                       <td>{{ $item->barang->nama_barang }}</td>
                                       <td>{{ $item->jumlah }}</td>
                                       <td>{{ $item->qty }}</td>

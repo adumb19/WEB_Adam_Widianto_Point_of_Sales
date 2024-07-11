@@ -34,7 +34,7 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         Barang::create([
-            'id_barang' => $request->id_barang,
+            'id_kategori' => $request->id_kategori,
             'nama_barang' => $request->nama_barang,
             'satuan' => $request->satuan,
             'qty' => $request->qty,

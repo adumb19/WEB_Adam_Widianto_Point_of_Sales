@@ -49,6 +49,7 @@
                                           <input type="hidden" name="_method" value="DELETE">
                                           <button type="submit" class="btn btn-ss btn-danger show_confirm">Hapus</button>
                                         </form>
+                                        <a href="{{ route('detail_penjualan.index') }}" class="btn btn-ss btn-info">Detail</a>
                                       </td>
                                   </tr>
                                   @endforeach
